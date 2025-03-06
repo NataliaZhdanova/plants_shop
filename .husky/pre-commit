@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+# Run all checks from the Next.js project directory
+cd plant_shop || exit 1
+
+# Run all checks
+# pnpm lint || exit 1
+pnpm lint-staged || exit 1
+pnpm type-check || exit 1
+pnpm test || exit 1
+pnpm prettier --check . || exit 1
